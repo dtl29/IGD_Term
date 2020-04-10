@@ -9,8 +9,9 @@ public class RoomsController : MonoBehaviour
     public GameObject SpawnPoint;
 
     public int SpawnRoatation;
-    private float RotateRoom;
+    private Vector3 RotateRoom;
 
+    public bool ShouldSpawn = true;
     private bool alreadySpawned = false;
     public bool CanPass = true;//this can be used so the player has to do something to pass through
     //have to add functionality for this ^^^^^^^^^^^^^^^^^^^^^^
@@ -18,19 +19,7 @@ public class RoomsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this does not work!!!!!
-        if(SpawnRoatation == 2)
-        {
-            RotateRoom = -90f;
-        }
-        if (SpawnRoatation == 3)
-        {
-            RotateRoom = 0f;
-        }
-        if (SpawnRoatation == 1)
-        {
-            RotateRoom = 90f;
-        }
+     
     }
 
     // Update is called once per frame
@@ -42,13 +31,32 @@ public class RoomsController : MonoBehaviour
     //OnTriggerEnter is called when another collider enters into this collider
     void OnTriggerEnter(Collider other)
     {
-        if(!alreadySpawned && other.tag=="Player" && CanPass)
+        if(!alreadySpawned && other.tag=="Player" && CanPass && ShouldSpawn)
         {
+            //this does not work!!!!!
+            if (SpawnRoatation == 2)
+            {
+                RotateRoom = new Vector3(0f, this.transform.parent.gameObject.transform.localEulerAngles.y - 90f, 0f);
+            }
+            if (SpawnRoatation == 3)
+            {
+                RotateRoom = new Vector3(0f, this.transform.parent.gameObject.transform.localEulerAngles.y, 0f);
+            }
+            if (SpawnRoatation == 1)
+            {
+                RotateRoom = new Vector3(0f, this.transform.parent.gameObject.transform.localEulerAngles.y + 90f, 0f);
+            }
+
             alreadySpawned = true;
             //add Door Animation then destory it
             Destroy(Door);
-            Instantiate(RoomToSpawn, new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z), Quaternion.identity);
-            //Instantiate(RoomToSpawn, new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z), Quaternion.Euler.forward);
+            //Instantiate(RoomToSpawn, new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z), Quaternion.identity);
+            Instantiate(RoomToSpawn, new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z), Quaternion.Euler(RotateRoom));
+        }
+        else if(!alreadySpawned && other.tag == "Player" && CanPass)
+        {
+            alreadySpawned = true;
+            Destroy(Door);
         }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCamera
   - PickUp
+  - Door
   layers:
   - Default
   - TransparentFX
