@@ -17,8 +17,9 @@ public class DoorCheck : MonoBehaviour
     {
         
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log("We Colliding");
         if(other.tag == "Door")
         {
             //GetComponent<script name>.name of variable <-- to access variables from other scripts attached to something 

@@ -8,10 +8,11 @@ public class PlayerFPS : MonoBehaviour
     public GameObject rightHand;
     private bool notSwinging = true;
     private int SwingCount = 0;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = transform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,6 +53,7 @@ public class PlayerFPS : MonoBehaviour
         if (SwingCount < 50)
         {
             Debug.Log("Attacking");
+            anim.Play("Swing");
             SwingCount++;
         }
         else

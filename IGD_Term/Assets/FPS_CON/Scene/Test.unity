@@ -282,7 +282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: RoomToSpawn
       value: 
-      objectReference: {fileID: 5491184818680881304, guid: 3626e1c4384ffe34b816e21fad81d7b0,
+      objectReference: {fileID: 1927100546349600377, guid: 3626e1c4384ffe34b816e21fad81d7b0,
         type: 3}
     - target: {fileID: 3938643423402377378, guid: af9c745e8ee08f8498b31ef760ab187c,
         type: 3}
@@ -293,7 +293,7 @@ PrefabInstance:
         type: 3}
       propertyPath: RoomToSpawn
       value: 
-      objectReference: {fileID: 5491184818680881304, guid: 3626e1c4384ffe34b816e21fad81d7b0,
+      objectReference: {fileID: 1927100546349600377, guid: 3626e1c4384ffe34b816e21fad81d7b0,
         type: 3}
     - target: {fileID: 3938643422656356927, guid: af9c745e8ee08f8498b31ef760ab187c,
         type: 3}
@@ -304,7 +304,7 @@ PrefabInstance:
         type: 3}
       propertyPath: RoomToSpawn
       value: 
-      objectReference: {fileID: 5491184818680881304, guid: 3626e1c4384ffe34b816e21fad81d7b0,
+      objectReference: {fileID: 1927100546349600377, guid: 3626e1c4384ffe34b816e21fad81d7b0,
         type: 3}
     - target: {fileID: 5911412981378737124, guid: af9c745e8ee08f8498b31ef760ab187c,
         type: 3}
