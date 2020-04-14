@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This is for the survivial one
 public class Player : MonoBehaviour
 {
     private bool holding;
