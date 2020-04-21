@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 786427081496013252}
   - component: {fileID: 786427081496013255}
   - component: {fileID: 786427081496013254}
+  - component: {fileID: 823784943}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -87,11 +88,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786427081496013248}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &823784943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786427081496013248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c437f4e54590e6546a5c5cfa3657a74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &786427081901046263
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +210,7 @@ GameObject:
   - component: {fileID: 786427081955181239}
   - component: {fileID: 786427081955181238}
   - component: {fileID: 786427081955181233}
+  - component: {fileID: 1807362681}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -278,6 +292,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1807362681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786427081955181235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf9d4ee10c887ce419f84bcf4cbbc2f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &786427083216927735
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,8 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786427083216927732}
-  - component: {fileID: 1169491076}
-  - component: {fileID: 1169491074}
+  - component: {fileID: 3901838863210797066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -310,7 +342,7 @@ Transform:
   m_Father: {fileID: 786427083288819514}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1169491076
+--- !u!114 &3901838863210797066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,28 +351,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 786427083216927735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e8eb115fc6fce4fac0814564c1de88, type: 3}
+  m_Script: {fileID: 11500000, guid: 833cbd9d10724aa418762f70eb5ecf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1169491074
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786427083216927735}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7c16fd6aa8d5c854a94ecd66e8dbc637, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  rightHand: {fileID: 786427081955181235}
 --- !u!1 &786427083288652568
 GameObject:
   m_ObjectHideFlags: 0
