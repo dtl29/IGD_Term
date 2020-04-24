@@ -16,18 +16,23 @@ public class DoorCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint1 = this.transform.localEulerAngles;
-        hitCollider1 = Physics.OverlapSphere(spawnPoint1, 2);
+        //spawnPoint = this.transform.localEulerAngles;
+        spawnPoint1 = this.transform.position;
+        hitCollider1 = Physics.OverlapSphere(spawnPoint1, .5f);
         if(hitCollider1.Length > 0)
         {
-            Debug.Log("We hit something");
-            if (hitCollider1[0].gameObject.tag == "Door")
+            for (int i = 0; i < hitCollider1.Length; i++)
             {
-                //GetComponent<script name>.name of variable <-- to access variables from other scripts attached to something 
-                Mommy = this.transform.parent.gameObject;
-                Mommy.GetComponent<RoomsController>().ShouldSpawn = false;
-                Destroy(hitCollider1[0].gameObject);
-                Destroy(this);
+                Debug.Log("We hit something");
+                if (hitCollider1[i].gameObject.tag == "Door")
+                {
+                    Debug.Log("we hit a door");
+                    //GetComponent<script name>.name of variable <-- to access variables from other scripts attached to something 
+                    Mommy = this.transform.parent.gameObject;
+                    Mommy.GetComponent<RoomsController>().ShouldSpawn = false;
+                    Destroy(hitCollider1[i].gameObject);
+                    Destroy(this); //check the paretns first 
+                }
             }
         }
     }
