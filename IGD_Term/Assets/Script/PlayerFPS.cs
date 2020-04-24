@@ -12,27 +12,20 @@ public class PlayerFPS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = transform.GetComponent<Animator>();
+        anim = rightHand.transform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (notSwinging)
+        if(Input.GetMouseButtonDown(0))
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                notSwinging = false;
-            }
-        }
-        else
-        { 
             Swing();
         }
     }
 
     //mutator to change the players health 
-    void ChangeHealth(int num, bool increase)
+    void ChangeHealth(int num, bool increase, char type)
     {
         if(increase)
         {
@@ -50,16 +43,7 @@ public class PlayerFPS : MonoBehaviour
 
     void Swing()
     {
-        if (SwingCount < 50)
-        {
-            Debug.Log("Attacking");
-            anim.Play("Swing");
-            SwingCount++;
-        }
-        else
-        {
-            notSwinging = true;
-            SwingCount = 0;
-        }
+        Debug.Log("Attacking");
+        anim.SetTrigger("Base_Attack");        
     }
 }
