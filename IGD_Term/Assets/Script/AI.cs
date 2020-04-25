@@ -35,7 +35,7 @@ public class AI : MonoBehaviour
             agent.SetDestination(GamePlayer.transform.position);
             if (attacked)
             {
-              //this.transform.position = Vector3.forward - directionOfPlayer.position;
+                //this.transform.position = Vector3.forward - directionOfPlayer.position;
             }
             /*else
             {
