@@ -25,7 +25,7 @@ public class PlayerFPS : MonoBehaviour
     }
 
     //mutator to change the players health 
-    void ChangeHealth(int num, bool increase, char type)
+    public void ChangeHealth(int num, bool increase, char type)
     {
         if(increase)
         {
@@ -37,6 +37,7 @@ public class PlayerFPS : MonoBehaviour
             if(health <= 0)
             {
                 Debug.Log("Start death sequnce");
+                Application.LoadLevel("Main");
             }
         }
     }
