@@ -58,7 +58,7 @@ public class RoomsController : MonoBehaviour
             //add Door Animation then destory it
             Destroy(Door);
 
-            rNFR = Random.Range(1, 4);
+            rNFR = Random.Range(1, 5);
             roomName = "Room" + rNFR;
             Debug.Log(roomName);
             Instantiate((Resources.Load(roomName, typeof(GameObject))), new Vector3(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z), Quaternion.Euler(RotateRoom));
