@@ -15,4 +15,11 @@ public class Wave : MonoBehaviour
     {
         
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+
+        }
+    }
 }

@@ -2171,6 +2171,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.8899963
       objectReference: {fileID: 0}
+    - target: {fileID: 7808091522244150700, guid: fc60d4fa42d74804f98354d0c8810b2b,
+        type: 3}
+      propertyPath: m_Name
+      value: water
+      objectReference: {fileID: 0}
     - target: {fileID: 7808091522244150701, guid: fc60d4fa42d74804f98354d0c8810b2b,
         type: 3}
       propertyPath: m_LocalPosition.y
