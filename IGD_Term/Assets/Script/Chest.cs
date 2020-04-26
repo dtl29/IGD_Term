@@ -5,7 +5,8 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     public GameObject lid;
-    private Animator anim; 
+    private Animator anim;
+    private bool open = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,10 @@ public class Chest : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && open)
             {
-                anim.SetTrigger("Open");
+                anim.SetBool("Open",true);
+                open = false;
             }
         }
     }
