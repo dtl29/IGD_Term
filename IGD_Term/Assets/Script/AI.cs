@@ -1,4 +1,40 @@
-using System.Collections;
+ using System.Collections;
+ using System.Collections.Generic;
+ using UnityEngine;
+ using UnityEngine.UI;
+ public class AI : MonoBehaviour
+ {
+
+     public Transform Player;
+     float MoveSpeed = 5;
+     float MaxDist = 10;
+     float MinDist = 5;
+
+     void Start()
+     {
+
+     }
+
+     void Update()
+     {
+         transform.LookAt(Player);
+
+         if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+         {
+
+             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+
+
+
+             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+             {
+                 //Here Call any function U want Like Shoot at here or something
+             }
+
+         }
+     }
+ }
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -44,7 +80,7 @@ public class AI : MonoBehaviour
             {
               this.transform.position += Vector3.right * Time.deltaTime;
             }*/
-        }
+/*        }
     }
 
     void OnTriggerEnter (Collider Other)
@@ -54,4 +90,4 @@ public class AI : MonoBehaviour
             attacked = true;
         }
     }
-}
+}*/
