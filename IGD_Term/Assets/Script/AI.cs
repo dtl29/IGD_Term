@@ -5,15 +5,15 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-    //public float chaseSpeed = 10f;
+    public float chaseSpeed = 10f;
     public bool attacked = false;
     //public Transform Player;
-    public GameObject GamePlayer;
+    public GameObject Player;
 
     //Mesh cube;
     //Rigidbody cube;
     //private Vector3 directionOfPlayer;
-    private NavMeshAgent agent;
+    //private NavMeshAgent agent;
 
     void Start()
     {
@@ -31,8 +31,11 @@ public class AI : MonoBehaviour
         }
         else
         {
-            agent = gameObject.GetComponent<NavMeshAgent>();
-            agent.SetDestination(GamePlayer.transform.position);
+            //agent = gameObject.GetComponent<NavMeshAgent>();
+            //agent.SetDestination(GamePlayer.transform.position);
+            //this.transform.position = this.transform.position - Player.transform.position;
+            //this.transform.Translate(Player.transform.position,chaseSpeed,0,0);
+            this.transform.position = Vector3.forward - Player.transform.position;
             if (attacked)
             {
                 //this.transform.position = Vector3.forward - directionOfPlayer.position;
@@ -46,7 +49,7 @@ public class AI : MonoBehaviour
 
     void OnTriggerEnter (Collider Other)
     {
-        if (Other.tag == "GamePlayer")
+        if (Other.tag == "Player")
         {
             attacked = true;
         }
