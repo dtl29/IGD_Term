@@ -11,11 +11,11 @@
     public PlayerFPS playerFPS;
 
     private float chaseSpeed = 5;
-    private float fightSpeed = 10;
+    private float fightSpeed = 8;
     private float retreatSpeed = 15;
     private float MaxDistance = 10;
     private Vector3 Direction;
-    private float stopDistance = 2f;
+    private float stopDistance = 2.3f;
     private int eHP = 10;
     private float killTime = 3;
     private bool damage = false;
@@ -59,7 +59,7 @@
         {
             ++hit;
 
-            if (hit%3 == 0)
+            if (hit%7 == 0)
             {
                 ChangeHealth(1);
             }
