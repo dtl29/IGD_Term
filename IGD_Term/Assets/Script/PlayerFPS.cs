@@ -18,6 +18,7 @@ public class PlayerFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Health: " + health);
         if(Input.GetMouseButtonDown(0))
         {
             Swing();

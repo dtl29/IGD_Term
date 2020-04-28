@@ -6,7 +6,7 @@
  public class AI : MonoBehaviour
  {
 
-    public Transform Player;
+    private Transform Player;
     public Transform Target;
     public PlayerFPS playerFPS;
     public GameObject gamePlayer;
