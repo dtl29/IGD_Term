@@ -8,15 +8,21 @@
 
     public Transform Player;
     public Transform Target;
+    public PlayerFPS playerFPS;
+
     private float chaseSpeed = 5;
-    private float fightSpeed = 6;
+    private float fightSpeed = 10;
     private float retreatSpeed = 15;
     private float MaxDistance = 10;
     private Vector3 Direction;
-    private float stopDistance = 2.5f;
+    private float stopDistance = 2f;
     private int eHP = 10;
     private float killTime = 3;
-    private bool hit = false;
+    private bool damage = false;
+    private bool attackingP = false;
+    private float hit = 1;
+    private char type = 'A';
+    private bool increase = false;
 
     void Start()
     {
@@ -49,9 +55,19 @@
             StartCoroutine(waiting());
         }
 
-        if (hit)
+        if (damage)
         {
-            ChangeHealth(1);
+            ++hit;
+
+            if (hit%3 == 0)
+            {
+                ChangeHealth(1);
+            }
+        }
+
+        if (attackingP)
+        {
+            playerFPS.ChangeHealth(1, increase, type);
         }
 
     }
@@ -63,10 +79,15 @@
 
     void OnTriggerEnter(Collider Other)
     {
-        if (Other.tag == "Player")
+        if (Other.tag == "Hand")
         {
-            hit = true;
-            Debug.Log("Hit");
+            damage = true;
+            Debug.Log("Cut");
+        }
+        else if (Other.tag == "Player")
+        {
+            attackingP = true;
+            Debug.Log("Charge");
         }
     }
 

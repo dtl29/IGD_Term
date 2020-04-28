@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - GamePlayer
   - enemyCube
+  - Hand
   layers:
   - Default
   - TransparentFX
