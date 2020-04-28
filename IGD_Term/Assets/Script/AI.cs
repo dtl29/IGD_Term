@@ -6,22 +6,35 @@
  public class AI : MonoBehaviour
  {
 
-    public Transform Player;
+    private Transform Player;
     public Transform Target;
-    float chaseSpeed = 5;
-    float fightSpeed = 6;
-    float retreatSpeed = 15;
-    float MaxDistance = 10;
+    public PlayerFPS playerFPS;
+
+    private float chaseSpeed = 5;
+    private float fightSpeed = 8;
+    private float retreatSpeed = 15;
+    private float MaxDistance = 10;
     private Vector3 Direction;
-    float stopDistance = 2.5f;
+    private float stopDistance = 2.3f;
+    private int eHP = 10;
+    private float killTime = 3;
+    private bool damage = false;
+    private bool attackingP = false;
+    private float hit = 1;
+    private char type = 'A';
+    private bool increase = false;
+
+    private GameObject player;
 
     void Start()
     {
-
+        player = GameObject.Find("Player");
+        Player = player.gameObject.transform;
     }
 
     void Update()
     {
+        Debug.Log("EnemyHealth:" + eHP);
         transform.LookAt(Player);
         Target = GameObject.FindGameObjectWithTag ("Player").transform;
 
@@ -45,10 +58,32 @@
             GetComponent<Rigidbody>().velocity = -Direction * retreatSpeed;
             StartCoroutine(waiting());
         }
+
     }
 
     IEnumerator waiting()
     {
       yield return new WaitForSeconds(4);
+    }
+
+    void OnTriggerEnter(Collider Other)
+    {
+       
+        if (Other.tag == "Player")
+        {
+            //attackingP = true;
+            player.GetComponent<PlayerFPS>().ChangeHealth(5, false, 'p');
+            Debug.Log("Charge");
+        }
+    }
+
+    public void ChangeHealth(int num)
+    {
+        eHP -= num;
+        if(eHP <= 0)
+        {
+            Debug.Log("Start enemy death sequence");
+            Destroy (gameObject, killTime);
+        }
     }
 }
