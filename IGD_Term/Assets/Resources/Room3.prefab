@@ -198,8 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &100027216
 Animator:
   serializedVersion: 3
@@ -509,8 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &181965447
 Animator:
   serializedVersion: 3
@@ -728,8 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &203275648
 Animator:
   serializedVersion: 3
@@ -1315,8 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &526806616
 Animator:
   serializedVersion: 3
@@ -1442,8 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &534943054
 Animator:
   serializedVersion: 3
@@ -1661,8 +1656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &615182881
 Animator:
   serializedVersion: 3
@@ -2257,8 +2251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &782293781
 Animator:
   serializedVersion: 3
@@ -2384,8 +2377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &815339321
 Animator:
   serializedVersion: 3
@@ -2511,8 +2503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &840134399
 Animator:
   serializedVersion: 3
@@ -2730,8 +2721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &893545730
 Animator:
   serializedVersion: 3
@@ -2949,8 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &933021276
 Animator:
   serializedVersion: 3
@@ -3076,8 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &933915854
 Animator:
   serializedVersion: 3
@@ -3663,8 +3651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1173270644
 Animator:
   serializedVersion: 3
@@ -4525,8 +4512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1410226416
 Animator:
   serializedVersion: 3
@@ -4927,8 +4913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1484716072
 Animator:
   serializedVersion: 3
@@ -5054,8 +5039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1499226577
 Animator:
   serializedVersion: 3
@@ -5733,8 +5717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1563460948
 Animator:
   serializedVersion: 3
@@ -5860,8 +5843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1580553070
 Animator:
   serializedVersion: 3
@@ -6171,8 +6153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1612109923
 Animator:
   serializedVersion: 3
@@ -6666,8 +6647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1684861136
 Animator:
   serializedVersion: 3
@@ -6793,8 +6773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1698236983
 Animator:
   serializedVersion: 3
@@ -7104,8 +7083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &1724646208
 Animator:
   serializedVersion: 3
@@ -7690,8 +7668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &2034752284
 Animator:
   serializedVersion: 3
@@ -7817,8 +7794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &2067955988
 Animator:
   serializedVersion: 3
@@ -8850,7 +8826,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7066591992275431108}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -8867,8 +8843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0783fbc08de950c42bdbf0304cfb5b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  player: {fileID: 0}
+  damage: 100
 --- !u!95 &3812184104259672108
 Animator:
   serializedVersion: 3
