@@ -18,14 +18,13 @@ public class PlayerFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Health: " + health);
         if(Input.GetMouseButtonDown(0))
         {
             Swing();
         }
     }
 
-    //mutator to change the players health
+    //mutator to change the players health 
     public void ChangeHealth(int num, bool increase, char type)
     {
         if(increase)
@@ -37,7 +36,7 @@ public class PlayerFPS : MonoBehaviour
             health -= num;
             if(health <= 0)
             {
-                Debug.Log("Start death sequence");
+                Debug.Log("Start death sequnce");
                 Application.LoadLevel("Main");
             }
         }
@@ -46,6 +45,6 @@ public class PlayerFPS : MonoBehaviour
     void Swing()
     {
         Debug.Log("Attacking");
-        anim.SetTrigger("Base_Attack");
+        anim.SetTrigger("Base_Attack");        
     }
 }
