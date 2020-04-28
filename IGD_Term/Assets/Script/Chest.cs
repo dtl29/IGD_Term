@@ -24,6 +24,8 @@ public class Chest : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 anim.SetTrigger("Open");
+                GameObject.Find("Dagger").GetComponent<Renderer>().enabled = false;
+                GameObject.Find("FancySword").GetComponent<Renderer>().enabled = true;
             }
         }
     }
