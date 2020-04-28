@@ -22,10 +22,9 @@ public class PlayerFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-=======
         healthText.text = "Health:" + health;
->>>>>>> a8785028eacd4bb0776a54664c73ec46b6b9840a
+=======
+>>>>>>> Stashed changes
         Debug.Log("Health: " + health);
         if(Input.GetMouseButtonDown(0))
         {
