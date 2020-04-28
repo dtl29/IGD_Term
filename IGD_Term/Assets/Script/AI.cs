@@ -1,54 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+ using System.Collections;
+ using System.Collections.Generic;
+ using UnityEngine;
+ using UnityEngine.UI;
 
-public class AI : MonoBehaviour
-{
-    //public float chaseSpeed = 10f;
-    public bool attacked = false;
-    //public Transform Player;
-    public GameObject GamePlayer;
+ public class AI : MonoBehaviour
+ {
 
-    //Mesh cube;
-    //Rigidbody cube;
-    //private Vector3 directionOfPlayer;
-    private NavMeshAgent agent;
+    public Transform Player;
+    public Transform Target;
+    float chaseSpeed = 5;
+    float fightSpeed = 6;
+    float retreatSpeed = 15;
+    float MaxDistance = 10;
+    private Vector3 Direction;
+    float stopDistance = 2.5f;
 
     void Start()
     {
-        //cube = this.GetComponent<Rigidbody>();//= this.GetComponent<MeshFilter>().mesh;
-        //this.GetComponent<NavMeshAgent>();//.SetDestination(GamePlayer.transform.position);
-        //agent = gameObject.GetComponent<NavMeshAgent>();
 
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        transform.LookAt(Player);
+        Target = GameObject.FindGameObjectWithTag ("Player").transform;
+
+        if (Vector3.Distance(transform.position, Player.position) > stopDistance)
         {
-            Application.Quit();
-        }
-        else
-        {
-            agent = gameObject.GetComponent<NavMeshAgent>();
-            agent.SetDestination(GamePlayer.transform.position);
-            if (attacked)
+
+            transform.position += transform.forward * chaseSpeed * Time.deltaTime;
+
+            if (Vector3.Distance(transform.position, Player.position) <= MaxDistance)
             {
-                //this.transform.position = Vector3.forward - directionOfPlayer.position;
+                transform.position += transform.forward * fightSpeed * Time.deltaTime;
+                transform.position += transform.up * fightSpeed * Time.deltaTime;
             }
-            /*else
-            {
-              this.transform.position += Vector3.right * Time.deltaTime;
-            }*/
+
+        }
+        else if ((Vector3.Distance(Target.position - (Vector3.back * 2.5f), transform.position)) > stopDistance)//Vector3.Distance(transform.position, Player.position) == stopDistance)
+        {
+            /*transform.position += transform.forward * fightSpeed * Time.deltaTime;
+            transform.position += transform.up * chaseSpeed * Time.deltaTime;*/
+            Direction = (transform.position - GetComponent<Rigidbody>().position).normalized;
+            GetComponent<Rigidbody>().velocity = -Direction * retreatSpeed;
+            StartCoroutine(waiting());
         }
     }
 
-    void OnTriggerEnter (Collider Other)
+    IEnumerator waiting()
     {
-        if (Other.tag == "GamePlayer")
-        {
-            attacked = true;
-        }
+      yield return new WaitForSeconds(4);
     }
 }
