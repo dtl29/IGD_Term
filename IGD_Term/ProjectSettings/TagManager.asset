@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Enemy
   - GamePlayer
+  - enemyCube
   layers:
   - Default
   - TransparentFX
