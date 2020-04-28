@@ -22,6 +22,10 @@ public class PlayerFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         healthText.text = "Health:" + health;
         Debug.Log("Health: " + health);
         if(Input.GetMouseButtonDown(0))
