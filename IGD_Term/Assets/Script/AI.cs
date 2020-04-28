@@ -9,28 +9,26 @@
     public Transform Player;
     public Transform Target;
     public PlayerFPS playerFPS;
+    public GameObject gamePlayer;
 
     private float chaseSpeed = 5;
-    private float fightSpeed = 8;
+    private float fightSpeed = 5;
     private float retreatSpeed = 15;
     private float MaxDistance = 10;
     private Vector3 Direction;
     private float stopDistance = 2.3f;
-    private int eHP = 10;
+    private int eHP = 5;
     private float killTime = 3;
-    private bool damage = false;
-    private bool attackingP = false;
-    private float hit = 1;
-    private char type = 'A';
-    private bool increase = false;
 
     void Start()
     {
-
+        gamePlayer = GameObject.Find("Player");
+        Player = Player.gameObject.transform;
     }
 
     void Update()
     {
+        Debug.Log("EnemyHealth:" + eHP);
         transform.LookAt(Player);
         Target = GameObject.FindGameObjectWithTag ("Player").transform;
 
@@ -46,47 +44,24 @@
             }
 
         }
-        else if ((Vector3.Distance(Target.position - (Vector3.back * 2.5f), transform.position)) > stopDistance)//Vector3.Distance(transform.position, Player.position) == stopDistance)
+        else if ((Vector3.Distance(Target.position - (Vector3.back * 2.5f), transform.position)) > stopDistance)
         {
-            /*transform.position += transform.forward * fightSpeed * Time.deltaTime;
-            transform.position += transform.up * chaseSpeed * Time.deltaTime;*/
             Direction = (transform.position - GetComponent<Rigidbody>().position).normalized;
             GetComponent<Rigidbody>().velocity = -Direction * retreatSpeed;
             StartCoroutine(waiting());
         }
-
-        if (damage)
-        {
-            ++hit;
-
-            if (hit%7 == 0)
-            {
-                ChangeHealth(1);
-            }
-        }
-
-        if (attackingP)
-        {
-            playerFPS.ChangeHealth(1, increase, type);
-        }
-
     }
 
     IEnumerator waiting()
     {
-      yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
     }
 
     void OnTriggerEnter(Collider Other)
     {
-        if (Other.tag == "Hand")
+        if (Other.tag == "Player")
         {
-            damage = true;
-            Debug.Log("Cut");
-        }
-        else if (Other.tag == "Player")
-        {
-            attackingP = true;
+            Player.GetComponent<PlayerFPS>().ChangeHealth(5, false, 'p');
             Debug.Log("Charge");
         }
     }

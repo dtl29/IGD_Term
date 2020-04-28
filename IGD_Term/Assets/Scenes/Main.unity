@@ -354,8 +354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 5068034623686922510}
-  Target: {fileID: 0}
+  Target: {fileID: 5068034623686922510}
   playerFPS: {fileID: 5068034623686922506}
+  gamePlayer: {fileID: 5068034623686922505}
 --- !u!54 &558282532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -493,8 +494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 5068034623686922510}
-  Target: {fileID: 0}
+  Target: {fileID: 5068034623686922510}
   playerFPS: {fileID: 5068034623686922506}
+  gamePlayer: {fileID: 5068034623686922505}
 --- !u!54 &1215924323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1040,6 +1042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068034621663712422, guid: b2a2bb95563447240aa63dbc18ec732a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5068034622774820283, guid: b2a2bb95563447240aa63dbc18ec732a,
         type: 3}
