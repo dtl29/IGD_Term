@@ -11,18 +11,13 @@
     public PlayerFPS playerFPS;
 
     private float chaseSpeed = 5;
-    private float fightSpeed = 8;
+    private float fightSpeed = 6;
     private float retreatSpeed = 15;
     private float MaxDistance = 10;
     private Vector3 Direction;
-    private float stopDistance = 2.3f;
-    private int eHP = 10;
+    private float stopDistance = 2.5f;
+    private int eHP = 5;
     private float killTime = 3;
-    private bool damage = false;
-    private bool attackingP = false;
-    private float hit = 1;
-    private char type = 'A';
-    private bool increase = false;
 
     private GameObject player;
 
@@ -50,10 +45,8 @@
             }
 
         }
-        else if ((Vector3.Distance(Target.position - (Vector3.back * 2.5f), transform.position)) > stopDistance)//Vector3.Distance(transform.position, Player.position) == stopDistance)
+        else if ((Vector3.Distance(Target.position - (Vector3.back * 2.5f), transform.position)) > stopDistance)
         {
-            /*transform.position += transform.forward * fightSpeed * Time.deltaTime;
-            transform.position += transform.up * chaseSpeed * Time.deltaTime;*/
             Direction = (transform.position - GetComponent<Rigidbody>().position).normalized;
             GetComponent<Rigidbody>().velocity = -Direction * retreatSpeed;
             StartCoroutine(waiting());
@@ -68,10 +61,9 @@
 
     void OnTriggerEnter(Collider Other)
     {
-       
+
         if (Other.tag == "Player")
         {
-            //attackingP = true;
             player.GetComponent<PlayerFPS>().ChangeHealth(5, false, 'p');
             Debug.Log("Charge");
         }
