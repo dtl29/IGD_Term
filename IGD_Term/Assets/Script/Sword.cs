@@ -20,7 +20,7 @@ public class Sword : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            other.GetComponent<AI>().ChangeHealth(1);
+            Debug.Log("should get enemys health function to do damage.");
         }
     }
 }
