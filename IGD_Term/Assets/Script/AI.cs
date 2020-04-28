@@ -20,6 +20,8 @@
     private int eHP = 5;
     private float killTime = 3;
 
+    private GameObject player;
+
     void Start()
     {
         gamePlayer = GameObject.Find("Player");

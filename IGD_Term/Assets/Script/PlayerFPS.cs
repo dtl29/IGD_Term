@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerFPS : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerFPS : MonoBehaviour
     private bool notSwinging = true;
     private int SwingCount = 0;
     private Animator anim;
+
+    public Text healthText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,10 @@ public class PlayerFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+        healthText.text = "Health:" + health;
+>>>>>>> a8785028eacd4bb0776a54664c73ec46b6b9840a
         Debug.Log("Health: " + health);
         if(Input.GetMouseButtonDown(0))
         {
