@@ -6,7 +6,7 @@
  public class AI : MonoBehaviour
  {
 
-    public Transform Player;
+    private Transform Player;
     public Transform Target;
     public PlayerFPS playerFPS;
 
@@ -24,13 +24,17 @@
     private char type = 'A';
     private bool increase = false;
 
+    private GameObject player;
+
     void Start()
     {
-
+        player = GameObject.Find("Player");
+        Player = player.gameObject.transform;
     }
 
     void Update()
     {
+        Debug.Log("EnemyHealth:" + eHP);
         transform.LookAt(Player);
         Target = GameObject.FindGameObjectWithTag ("Player").transform;
 
@@ -55,21 +59,6 @@
             StartCoroutine(waiting());
         }
 
-        if (damage)
-        {
-            ++hit;
-
-            if (hit%7 == 0)
-            {
-                ChangeHealth(1);
-            }
-        }
-
-        if (attackingP)
-        {
-            playerFPS.ChangeHealth(1, increase, type);
-        }
-
     }
 
     IEnumerator waiting()
@@ -79,14 +68,11 @@
 
     void OnTriggerEnter(Collider Other)
     {
-        if (Other.tag == "Hand")
+       
+        if (Other.tag == "Player")
         {
-            damage = true;
-            Debug.Log("Cut");
-        }
-        else if (Other.tag == "Player")
-        {
-            attackingP = true;
+            //attackingP = true;
+            player.GetComponent<PlayerFPS>().ChangeHealth(5, false, 'p');
             Debug.Log("Charge");
         }
     }
