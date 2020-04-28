@@ -8,12 +8,15 @@
 
     public Transform Player;
     public Transform Target;
-    float chaseSpeed = 5;
-    float fightSpeed = 6;
-    float retreatSpeed = 15;
-    float MaxDistance = 10;
+    private float chaseSpeed = 5;
+    private float fightSpeed = 6;
+    private float retreatSpeed = 15;
+    private float MaxDistance = 10;
     private Vector3 Direction;
-    float stopDistance = 2.5f;
+    private float stopDistance = 2.5f;
+    private int eHP = 10;
+    private float killTime = 3;
+    private bool hit = false;
 
     void Start()
     {
@@ -45,10 +48,35 @@
             GetComponent<Rigidbody>().velocity = -Direction * retreatSpeed;
             StartCoroutine(waiting());
         }
+
+        if (hit)
+        {
+            ChangeHealth(1);
+        }
+
     }
 
     IEnumerator waiting()
     {
       yield return new WaitForSeconds(4);
+    }
+
+    void OnTriggerEnter(Collider Other)
+    {
+        if (Other.tag == "Player")
+        {
+            hit = true;
+            Debug.Log("Hit");
+        }
+    }
+
+    public void ChangeHealth(int num)
+    {
+        eHP -= num;
+        if(eHP <= 0)
+        {
+            Debug.Log("Start enemy death sequence");
+            Destroy (gameObject, killTime);
+        }
     }
 }
